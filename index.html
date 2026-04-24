@@ -76,18 +76,32 @@
   }
   .cta:hover { filter: brightness(1.08); text-decoration: none; }
 
-  .hero-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin: 24px 0;
+  .hero-video {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 520px;
+    margin: 12px auto 28px;
+    display: block;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--bg);
   }
-  .hero-grid img {
+
+  .more-angles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 16px 0 32px;
+  }
+  .more-angles img {
     width: 100%;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid var(--border);
+  }
+  @media (max-width: 600px) {
+    .more-angles { grid-template-columns: repeat(2, 1fr); }
   }
 
   .feature-grid {
@@ -142,9 +156,17 @@
     <a class="cta ghost" href="#launching-soon">90-sec demo — coming soon</a>
   </div>
 
-  <!-- Hero image grid -->
-  <div class="hero-grid">
+  <!-- Hero video — turntable of the flagship athletic-hero preset -->
+  <video class="hero-video" autoplay muted loop playsinline poster="./screenshots/athletic-hero.png">
+    <source src="./cover.mp4" type="video/mp4">
+    <!-- fallback if video fails -->
     <img src="./screenshots/athletic-hero.png" alt="Athletic hero preset — feminine athletic humanoid in red superhero suit, hands-on-hips stance">
+  </video>
+
+  <!-- More presets, shown as a thumbnail strip -->
+  <h3 style="margin-top: 8px;">More presets — pick or describe your own</h3>
+  <div class="more-angles">
+    <img src="./screenshots/athletic-hero.png" alt="Athletic hero preset">
     <img src="./screenshots/heroic-bodybuilder.png" alt="Heroic bodybuilder preset — dark-skinned masculine humanoid in gold superhero suit">
     <img src="./screenshots/sci-fi-pilot.png" alt="Sci-fi pilot preset — athletic feminine humanoid in white sci-fi suit, action pose">
     <img src="./screenshots/petite-mage.png" alt="Petite mage preset — feminine humanoid in purple fantasy robe, relaxed stance">
