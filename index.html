@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lachilargu — Character Creator Plugin for Blender</title>
+<meta name="description" content="Natural-language 3D character creator for Blender. Type a description, get a rigged, poseable character ready for Unity or Unreal.">
+
+<!-- Open Graph tags — what shows up when people share the link -->
+<meta property="og:title" content="Character Creator Plugin for Blender">
+<meta property="og:description" content="Type a description. Get a rigged 3D character. Unity + Unreal ready. No sculpting.">
+<meta property="og:image" content="https://lachilargu.github.io/screenshots/athletic-hero.png">
+<meta property="og:url" content="https://lachilargu.github.io">
+<meta property="og:type" content="product">
+
+<style>
+  :root {
+    --bg: #111;
+    --card: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #8a8a8a;
+    --accent: #d97757;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", Inter, Segoe UI, Roboto, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+
+  h1 { font-size: 42px; line-height: 1.1; margin: 0 0 12px; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { font-size: 22px; margin: 48px 0 14px; font-weight: 600; }
+  h3 { font-size: 15px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 32px 0 10px; }
+
+  p { margin: 0 0 16px; }
+  em { color: var(--muted); font-style: italic; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .lede {
+    font-size: 20px;
+    color: var(--muted);
+    margin-bottom: 36px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0 40px;
+  }
+  .cta {
+    display: inline-block;
+    padding: 12px 22px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .cta.ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .cta:hover { filter: brightness(1.08); text-decoration: none; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .hero-grid img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .feature h4 { margin: 0 0 6px; font-size: 15px; }
+  .feature p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  .project-row {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .project-row:last-child { border-bottom: none; }
+  .project-row h4 { margin: 0 0 4px; font-size: 16px; }
+  .project-row p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; color: var(--muted); margin-top: 32px; }
+  .links a { color: var(--muted); border-bottom: 1px solid transparent; }
+  .links a:hover { color: var(--accent); border-bottom-color: var(--accent); text-decoration: none; }
+
+  footer { color: var(--muted); font-size: 13px; margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 32px; }
+    .lede { font-size: 17px; }
+    main { padding: 32px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ===== HERO ===== -->
+  <h1>Type a description.<br>Get a 3D character.</h1>
+  <p class="lede">
+    Character Creator is a Blender plugin that turns plain English into a rigged, poseable 3D humanoid — ready for Unity, Unreal, or your own animation pipeline.
+  </p>
+
+  <div class="cta-row">
+    <a class="cta" href="#launching-soon" id="gumroad-cta">Buy on Gumroad — launching soon</a>
+    <a class="cta ghost" href="#launching-soon">90-sec demo — coming soon</a>
+  </div>
+
+  <!-- Hero image grid -->
+  <div class="hero-grid">
+    <img src="./screenshots/athletic-hero.png" alt="Athletic hero preset — feminine athletic humanoid in red superhero suit, hands-on-hips stance">
+    <img src="./screenshots/heroic-bodybuilder.png" alt="Heroic bodybuilder preset — dark-skinned masculine humanoid in gold superhero suit">
+    <img src="./screenshots/sci-fi-pilot.png" alt="Sci-fi pilot preset — athletic feminine humanoid in white sci-fi suit, action pose">
+    <img src="./screenshots/petite-mage.png" alt="Petite mage preset — feminine humanoid in purple fantasy robe, relaxed stance">
+  </div>
+
+
+  <!-- ===== WHAT IT DOES ===== -->
+  <h2>What it does</h2>
+  <p>
+    Type <em>"tall athletic woman in a red superhero suit, hero pose"</em> and get a rigged MPFB humanoid in about a minute. Change your mind? Say <em>"make the suit navy"</em> — it re-renders in 15 seconds. Or pick from 12 hand-tuned presets. Or hit random.
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature"><h4>Real humanoid anatomy</h4><p>Powered by MPFB 2 — clean topology, auto-rigged, 163 bones with fingers + toes.</p></div>
+    <div class="feature"><h4>6 pose presets</h4><p>Hero, action, relaxed, sitting, T-pose, A-pose. IK-driven so hands actually reach targets.</p></div>
+    <div class="feature"><h4>Unity + Unreal FBX export</h4><p>One click. Weighted, rigged, engine-conventions applied.</p></div>
+    <div class="feature"><h4>Iterative refinement</h4><p>"Change eye color to green" runs in 15 seconds. Not a full rebuild.</p></div>
+    <div class="feature"><h4>Random + themed generation</h4><p>Pure Python RNG across the spec axes. Genuinely diverse, not LLM-converging.</p></div>
+    <div class="feature"><h4>Local-only chat UI</h4><p>Dark-mode browser interface. Bring your own Claude API key. Zero telemetry.</p></div>
+  </div>
+
+
+  <!-- ===== REQUIREMENTS ===== -->
+  <h2>Requirements</h2>
+  <ul>
+    <li>Blender 4.2 or newer (4.5 LTS recommended)</li>
+    <li>MPFB 2 add-on (free, one-time install — setup in the docs)</li>
+    <li>Python 3.9+</li>
+    <li>Claude API key for natural-language mode — <a href="https://console.anthropic.com" target="_blank" rel="noopener">$5 free signup credit</a> covers hundreds of characters</li>
+    <li>Mac, Windows, or Linux</li>
+  </ul>
+
+
+  <!-- ===== ABOUT CREATOR ===== -->
+  <h2>About</h2>
+  <p>
+    Indie tools for Blender and game dev. This plugin grew out of needing a faster way to make NPCs — typing a description beats clicking through 40 sliders. Launching soon; updates within the 2.x line will be free.
+  </p>
+
+
+  <!-- ===== CONTACT / LINKS ===== -->
+  <h2>Elsewhere</h2>
+  <div class="links">
+    <a href="https://github.com/Lachilargu">GitHub</a>
+    <!-- Uncomment + fill in once you set these up:
+    <a href="<!-- GUMROAD-URL -->">Gumroad</a>
+    <a href="<!-- SUPERHIVE-URL -->">Superhive</a>
+    <a href="<!-- DISCORD-URL -->">Discord</a>
+    <a href="<!-- TWITTER-URL -->">Twitter/X</a>
+    <a href="mailto:<!-- EMAIL -->">Email</a>
+    -->
+  </div>
+
+  <p style="font-size: 13px; margin-top: 24px; color: var(--muted);">
+    Want to be notified when the plugin launches? Follow <a href="https://github.com/Lachilargu">the GitHub profile</a> — or come back here in a week or two.
+  </p>
+
+  <footer>
+    Plugin is MIT-licensed. MPFB 2 (dependency, installed separately) is GPL-3.0 and credit to the <a href="http://www.makehumancommunity.org/">MakeHuman community</a>.
+  </footer>
+
+</main>
+</body>
+</html>
